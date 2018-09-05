@@ -3,12 +3,12 @@ using System.Threading.Tasks;
 
 namespace ScriptMana.Interpreter
 {
-    interface IInterpreter<T>
+    interface IInterpreter
     {
         InterpreterType Type { get; set; }
 
         string PathToExecutable { get; set; }
 
-        Task Call(Dictionary<string, string> Arguments);
+        Task<bool> Call<T>(string scriptPath, Dictionary<string, string> arguments);
     }
 }
